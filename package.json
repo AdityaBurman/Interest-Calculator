@@ -1,0 +1,15 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "calculate simple interest and compound interest",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  
+  "author": "aditya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

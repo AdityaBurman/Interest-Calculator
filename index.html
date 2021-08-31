@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interest Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Responsive-->
+    <style> 
+        body {background-color: rgb(141, 230, 106);} /*Internal CSS*/
+    </style>
+</head>
+<body style="text-align:center;"> <!--Inline CSS-->
+    <h2 style="text-align:center;">Calculate your simple and compound interest</h2>
+    
+    <div>
+        <label for="first">Enter principal</label><br>
+        <input type="text" id="first" name="a" placeholder="" /><br><br>  <!--Principal Input-->
+
+        <label for="second">Enter time period</label><br>
+        <input type="text" id="second" name="b" placeholder="" /><br><br>  <!--Time Input-->
+
+        <label for="third">Enter rate of interest (%)</label><br>
+        <input type="text" id="third" name="c" placeholder="" /><br><br> <!--Rate Input-->
+
+        <button onclick="interest_calculator()">Submit</button>
+    </div><br> 
+    <div id="num"> </div><br> <!--SI Output-->
+    <div id="num1"> </div>    <!--CI Output-->
+</body>
+<script type="text/javascript">
+    function interest_calculator() {
+        var p, t, r, si, ci;
+        p = document.getElementById("first").value;
+        t = document.getElementById("second").value;
+        r = document.getElementById("third").value;
+        si = parseInt((p * t * r) / 100);              /*Simple Interest formula*/
+        amount = p * Math.pow((1 + r / 100), t);
+        ci = amount - p;                                /*compound interest formula*/
+        document.getElementById('num').innerHTML = "Simple interest : " + si;
+        document.getElementById('num1').innerHTML = "Compound interest : " + ci;
+    }
+    </script>
+</html>
